@@ -1,0 +1,5 @@
+complex_path    complex_value   path
+conf_file       string
+core            log
+hash            string
+set_var         rewrite
