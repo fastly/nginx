@@ -618,6 +618,22 @@ ngx_configure_listening_sockets(ngx_cycle_t *cycle)
 #endif
 
 #endif /* NGX_HAVE_DEFERRED_ACCEPT */
+
+#if (NGX_HAVE_TCP_CWND && defined TCP_CWND)
+	int cwnd = 10;
+	if (setsockopt(ls[i].fd, IPPROTO_TCP, TCP_CWND,
+		       &cwnd, sizeof(cwnd))
+	    == -1)
+	  {
+	    ngx_log_error(NGX_LOG_ALERT, cycle->log, ngx_errno,
+			  "setsockopt(TCP_CWND, %d) for %V failed, "
+			  "ignored",
+			  cwnd, &ls[i].addr_text);
+	    
+	    continue;
+	  }
+#endif
+	
     }
 
     return;

@@ -109,6 +109,8 @@ typedef struct iocb  ngx_aiocb_t;
 
 #define NGX_HAVE_OS_SPECIFIC_INIT    1
 
+#define TCP_CWND                     19
+#define NGX_HAVE_TCP_CWND            1
 
 extern char **environ;
 
