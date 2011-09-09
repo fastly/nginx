@@ -1,3 +1,9 @@
+nginx (0.8.54-5) unstable; urgency=low
+
+  * Add initcwnd support
+
+ -- Jason Cook <jason@fastly.com>  Thu, 08 Sep 2011 18:58:17 -0700
+
 nginx (0.8.54-4) unstable; urgency=low
 
   [Micheal Lustfield]
